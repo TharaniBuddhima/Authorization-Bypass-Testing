@@ -1,0 +1,28 @@
+Access Control Analysis
+
+Purpose:
+Evaluate whether the application properly restricts users from modifying resources belonging to other users.
+
+Testing Performed:
+A legitimate request containing a user identifier was intercepted and sent to Burp Repeater.
+
+Original Request:
+{"id":5,"first_name":"Bob","surname":"Smith"}
+
+Modified Request:
+{"id":3,"first_name":"Bob","surname":"Smith"}
+
+Observation:
+The server accepted the modified request and returned {"result":"ok"}.
+
+Verification:
+The changes were visible on the DVWA page after refreshing the application.
+
+Security Impact:
+An attacker could manipulate identifiers to modify records belonging to other users.
+
+Risk Level:
+High
+
+Conclusion:
+The application failed to enforce proper authorization controls and trusted client-supplied identifiers.

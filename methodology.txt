@@ -1,0 +1,13 @@
+Methodology
+
+1. Started DVWA and Burp Suite.
+2. Logged into DVWA.
+3. Opened the Authorisation Bypass module.
+4. Enabled Burp Proxy and captured requests.
+5. Identified a request containing a user ID parameter.
+6. Sent the request to Burp Repeater.
+7. Modified the user identifier from id=5 to id=3.
+8. Sent the modified request.
+9. Observed the server response {"result":"ok"}.
+10. Verified the changes within the DVWA application.
+11. Documented findings and assessed the authorization controls.

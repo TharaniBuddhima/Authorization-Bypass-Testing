@@ -1,0 +1,22 @@
+Burp Suite Project 5 – Authorization Bypass Testing
+
+Finding 1:
+The application accepted user identifiers within the JSON request body.
+
+Finding 2:
+The "id" parameter was modified from 5 to 3 using Burp Suite Repeater.
+
+Finding 3:
+The server processed the modified request successfully and returned {"result":"ok"}.
+
+Finding 4:
+The changes were reflected on the DVWA page, confirming that another user's data was modified.
+
+Finding 5:
+The application did not verify whether the authenticated user was authorized to modify the specified record.
+
+Finding 6:
+Authorization decisions relied on client-controlled identifiers.
+
+Summary:
+An Authorization Bypass vulnerability was identified. By modifying the user ID parameter, it was possible to alter records belonging to other users without proper authorization checks.
